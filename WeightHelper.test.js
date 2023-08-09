@@ -1,0 +1,24 @@
+const weightHelper = require("./WeightHelper.js");
+
+test("Invalid fields = ht is 0 cms", function() { expect(weightHelper(0,45)).toBe("Invalid fields") });
+test("Invalid fields = wt is 0 kgs", function() { expect(weightHelper(170,0)).toBe("Invalid fields") });
+test("Underweight =  ht is 180 cm &  wt is 45 kg", function() { expect(weightHelper(180,45)).toBe("Underweight") });
+test("Underweight =  ht is 180 cm &  wt is 55 kg", function() { expect(weightHelper(180,55)).toBe("Underweight") }); 
+test("Normal weight =  ht is 180 cm &  wt is 65 kg", function() { expect(weightHelper(180,65)).toBe("Normal weight") }); 
+test("Normal weight =  ht is 180 cm &  wt is 75 kg", function() { expect(weightHelper(180,75)).toBe("Normal weight") }); 
+test("Underweight =  ht is 170 cm &  wt is 45 kg", function() { expect(weightHelper(170,45)).toBe("Underweight") }); 
+test("Normal weight =  ht is 170 cm &  wt is 55 kg", function() { expect(weightHelper(170,55)).toBe("Normal weight") }); 
+test("Normal weight =  ht is 170 cm &  wt is 65 kg", function() { expect(weightHelper(170,65)).toBe("Normal weight") }); 
+test("Overweight =  ht is 170 cm &  wt is 75 kg", function() { expect(weightHelper(170,75)).toBe("Overweight") }); 
+test("Underweight =  ht is 160 cm &  wt is 45 kg", function() { expect(weightHelper(160,45)).toBe("Underweight") }); 
+test("Normal weight =  ht is 160 cm &  wt is 55 kg", function() { expect(weightHelper(160,55)).toBe("Normal weight") }); 
+test("Overweight =  ht is 160 cm &  wt is 65 kg", function() { expect(weightHelper(160,65)).toBe("Overweight") }); 
+test("Overweight =  ht is 160 cm &  wt is 75 kg", function() { expect(weightHelper(160,75)).toBe("Overweight") }); 
+test("Normal weight =  ht is 150 cm &  wt is 65 kg", function() { expect(weightHelper(150,45)).toBe("Normal weight") }); 
+test("Normal weight =  ht is 150 cm &  wt is 45 kg", function() { expect(weightHelper(150,55)).toBe("Normal weight") }); 
+test("Overweight =  ht is 150 cm &  wt is 55 kg", function() { expect(weightHelper(150,65)).toBe("Overweight") }); 
+test("Obese =  ht is 150 cm &  wt is 65 kg", function() { expect(weightHelper(150,75)).toBe("Obese") }); 
+test("Normal weight =  ht is 140 cm &  wt is 45 kg", function() { expect(weightHelper(140,45)).toBe("Normal weight") }); 
+test("Overweight =  ht is 140 cm &  wt is 55 kg", function() { expect(weightHelper(140,55)).toBe("Overweight") }); 
+test("Obese =  ht is 140 cm &  wt is 65 kg", function() { expect(weightHelper(140,65)).toBe("Obese") }); 
+test("Obese =  ht is 140 cm &  wt is 75 kg", function() { expect(weightHelper(140,75)).toBe("Obese") }); 
